@@ -1,0 +1,12 @@
+[
+  {
+    "crop": "vazhai",
+    "issue": "leaf spot",
+    "solution": "Use recommended fungicide spray."
+  },
+  {
+    "crop": "nel",
+    "issue": "yellow leaves",
+    "solution": "Apply nitrogen fertilizer."
+  }
+]
