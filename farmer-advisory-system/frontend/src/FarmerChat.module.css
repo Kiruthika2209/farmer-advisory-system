@@ -1,0 +1,291 @@
+.page {
+  min-height: 93vh;
+  padding: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #e9fbef 0%, #d7f5e2 100%);
+}
+
+.sideControls {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.iconButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 133, 90, 0.22);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #2f855a;
+}
+
+.iconButton:active {
+  transform: scale(0.98);
+}
+
+.climateBadge {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(47, 133, 90, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  color: #1f2937;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.card {
+  width: 100%;
+  max-width: 640px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 26px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.input {
+  padding: 10px 12px;
+  flex: 1 1 320px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.primaryButton {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #2f855a;
+  color: white;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.primaryButton:active {
+  transform: translateY(1px);
+}
+
+.primaryButton:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.attachedRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(47, 133, 90, 0.2);
+  background: rgba(47, 133, 90, 0.06);
+}
+
+.attachedThumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.attachedInfo {
+  flex: 1;
+  font-size: 13px;
+  color: rgba(17, 24, 39, 0.75);
+  line-height: 1.4;
+}
+
+.removeAttach {
+  border: none;
+  background: transparent;
+  color: #b91c1c;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.responseBox {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(47, 133, 90, 0.08);
+  border: 1px solid rgba(47, 133, 90, 0.15);
+  max-height: 400px;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+.responseMeta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(17, 24, 39, 0.62);
+  line-height: 1.45;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 50;
+}
+
+.modal {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+  padding: 18px;
+}
+
+.modalWide {
+  max-width: 560px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.modalHeaderTitle {
+  font-weight: 700;
+}
+
+.closeButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 4px 6px;
+  color: #111827;
+}
+
+.modalBody {
+  margin-top: 12px;
+}
+
+.speechBox {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(47, 133, 90, 0.06);
+  min-height: 72px;
+}
+
+.speechBoxActive {
+  border-color: rgba(47, 133, 90, 0.45);
+  background: rgba(47, 133, 90, 0.12);
+  box-shadow: 0 0 0 2px rgba(47, 133, 90, 0.15);
+}
+
+.responseActions {
+  margin-top: 10px;
+}
+
+.listenReplyBtn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(47, 133, 90, 0.35);
+  background: white;
+  color: #2f855a;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.listenReplyBtn:hover {
+  background: rgba(47, 133, 90, 0.08);
+}
+
+.errorText {
+  margin-top: 10px;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+.actionRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.secondaryButton {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #111827;
+  color: white;
+  cursor: pointer;
+}
+
+.disabledButton {
+  background: rgba(17, 24, 39, 0.1);
+  color: rgba(17, 24, 39, 0.55);
+  cursor: not-allowed;
+}
+
+.previewPanel {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(47, 133, 90, 0.06);
+}
+
+.previewLabel {
+  font-size: 13px;
+  color: rgba(17, 24, 39, 0.75);
+  margin-bottom: 8px;
+}
+
+.previewImg {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.helperText {
+  font-size: 12px;
+  color: rgba(17, 24, 39, 0.65);
+  align-self: center;
+}
