@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { blobToDataUrl, startAudioRecorder, stopAudioRecorder } from "./voiceRecord";
-
-const API_BASE = "http://localhost:5000";
+import { API_BASE } from "./apiConfig";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

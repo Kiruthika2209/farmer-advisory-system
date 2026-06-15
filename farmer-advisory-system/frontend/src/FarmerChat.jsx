@@ -3,6 +3,7 @@ import styles from "./FarmerChat.module.css";
 import { fileToCompressedDataUrl } from "./imageUtils";
 import { detectReplyLanguage } from "./detectReplyLanguage";
 import { useFarmerSpeech, speakFarmerReply, stopSpeaking } from "./useFarmerSpeech";
+import { API_BASE } from "./apiConfig";
 
 function FarmerChat({ lang = "en", userId = "" }) {
   const [question, setQuestion] = useState("");
@@ -206,7 +207,7 @@ function FarmerChat({ lang = "en", userId = "" }) {
         imagePayload = await fileToCompressedDataUrl(imageFile);
       }
 
-      const res = await fetch("http://localhost:5000/ask", {
+      const res = await fetch(`${API_BASE}/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
