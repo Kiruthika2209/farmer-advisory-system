@@ -61,6 +61,7 @@ const OPENROUTER_MODEL_LIST = buildModelList(DEFAULT_OPENROUTER_MODELS, envModel
 const OPENROUTER_VISION_MODEL_LIST = buildModelList(DEFAULT_VISION_MODELS, envVisionModelList);
 
 const MAX_IMAGE_BYTES = Number(process.env.MAX_IMAGE_BYTES) || 6 * 1024 * 1024;
+const VOICERSS_API_KEY = process.env.VOICERSS_API_KEY;
 
 const openrouter = OPENROUTER_API_KEY
   ? new OpenAI({
@@ -655,9 +656,12 @@ app.post("/tts", async (req, res) => {
     // For Tamil, use VoiceRSS which has excellent Tamil support
     // VoiceRSS is free for personal/educational use
     if (lang === "ta") {
+      if (!VOICERSS_API_KEY) {
+        throw new Error("VOICERSS_API_KEY not configured");
+      }
       const textToSpeak = text.slice(0, 500); // VoiceRSS limit
       const voiceCode = "ta-in"; // Tamil India voice
-      const voiceRSSUrl = `https://api.voicerss.org/?key=9d6d6d9865ae4932a99dd5b163e33079&hl=${voiceCode}&v=Google%20Tamil&src=${encodeURIComponent(textToSpeak)}&r=2&c=mp3&f=16khz_16bit_stereo`;
+      const voiceRSSUrl = `https://api.voicerss.org/?key=${VOICERSS_API_KEY}&hl=${voiceCode}&v=Google%20Tamil&src=${encodeURIComponent(textToSpeak)}&r=2&c=mp3&f=16khz_16bit_stereo`;
 
       const ttsRes = await fetch(voiceRSSUrl, { timeout: 10000 });
 
