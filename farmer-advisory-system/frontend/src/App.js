@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import FarmerChat from "./FarmerChat";
-import Login_page from "./Login_page";
+//import LoginPage from "./LoginPage";
+import LoginPage from "./LoginPage";
 import LandingPage from "./LandingPage";
 import History from "./History";
 import styles from "./App.module.css";
@@ -153,7 +154,7 @@ function App() {
     }
     if (showLogin) {
       return (
-        <Login_page 
+        <LoginPage 
           onLogin={handleLogin} 
           lang={lang}
           onLangChange={toggleLang}

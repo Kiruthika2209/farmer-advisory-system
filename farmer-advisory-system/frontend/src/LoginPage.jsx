@@ -1,8 +1,8 @@
 import { useMemo, useState, useEffect } from "react";
-import styles from "./Login_page.module.css";
+import styles from "./LoginPage.module.css";
 import bg from "./asssts/loginbg.jpg";
 
-function Login_page({ onLogin, onBack, lang = "en", onLangChange }) {
+function LoginPage({ onLogin, onBack, lang = "en", onLangChange }) {
   const t = (key) => {
     const dict = {
       en: {
@@ -348,4 +348,4 @@ function Login_page({ onLogin, onBack, lang = "en", onLangChange }) {
   );
 }
 
-export default Login_page;
+export default LoginPage;
