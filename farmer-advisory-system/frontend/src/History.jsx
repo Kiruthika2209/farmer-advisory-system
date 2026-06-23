@@ -73,7 +73,7 @@ function History({ userId, lang = "en" }) {
   useEffect(() => {
     loadHistory();
   }, []);
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     filterHistory();
   }, [history, searchTerm, selectedFilter]);

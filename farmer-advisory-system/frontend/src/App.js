@@ -18,6 +18,7 @@ function App() {
   const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
 
   // Security: Check session on mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const saved = localStorage.getItem("farmer_logged_in");
     const savedUserId = localStorage.getItem("farmer_user_id");
@@ -39,6 +40,7 @@ function App() {
   }, []);
 
   // Security: Language preference
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const savedLang = localStorage.getItem("farmer_lang");
     if (savedLang === "ta" || savedLang === "en") setLang(savedLang);
@@ -54,6 +56,7 @@ function App() {
   };
 
   // Reset inactivity timer on user interaction
+
   const handleUserActivity = () => {
     if (isLoggedIn) {
       setupInactivityTimeout();

@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import styles from "./FarmerChat.module.css";
 import { fileToCompressedDataUrl } from "./imageUtils";
-import { detectReplyLanguage } from "./detectReplyLanguage";
 import { useFarmerSpeech, speakFarmerReply, stopSpeaking } from "./useFarmerSpeech";
 import { API_BASE } from "./apiConfig";
 

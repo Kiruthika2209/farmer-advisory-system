@@ -160,7 +160,7 @@ app.use(express.json({ limit: "12mb" }));
 
 // Root route (browser test)
 app.get("/", (req, res) => {
-  res.send("Server running da 🚀");
+  res.send("Farmer Advisory Backend Running Successfully");
 });
 
 app.get("/health", (req, res) => {
